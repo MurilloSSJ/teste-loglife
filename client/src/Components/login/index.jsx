@@ -4,7 +4,7 @@ export const formsLogin = ()=>{
     return(
     <div className="loginDiv">
         <div className="alignCenterLogin">
-        <img src={enterprise} className="imgLogin"></img>
+        <img src={enterprise} className="imgLogin" alt="Logo da empresa"></img>
         </div>
         <h3>Login</h3>
         <div className="Transition"></div>
@@ -18,7 +18,7 @@ export const formsLogin = ()=>{
             <input type="password" className="inputLogin" name="password"></input>
             <br></br>
             <div className="alignCenterLogin">
-            <button type='submit'>Fazer Login</button>
+            <button type='submit' className="buttonLogin">Fazer Login</button>
             </div>
         </form>
     </div>

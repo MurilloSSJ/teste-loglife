@@ -1,0 +1,13 @@
+.smallTitle{
+    font-size: 35px;
+    margin-top: 20px;
+}
+.flexCheckbox{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+.newClientRegister{
+    margin: 50px 0px;}

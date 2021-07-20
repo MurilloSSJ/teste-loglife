@@ -8,26 +8,12 @@
     background-color: white;
     border-radius: 5%;
   }
-  @media screen and (max-width:800px){
-      .loginDiv{
-          width: 70%;
-      }
-  }
   .inputLogin{
     margin-bottom: 15px;
     border: 1px solid gray;
     width: 90%;
     font-style: italic;
     height: 30px;
-  }
-  h3{
-    font-size: 48px;
-    font-weight: bold;
-    color:#3d5a80;
-    font-family: Arial,sans-serif;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 4px;
   }
   .Transition{
     width: 100%;
@@ -37,25 +23,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  label{
-    color: #3d5a80;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  button{
-    font-size: 18px;
-    width: 90%;
-    height: 40px;
-    color: white;
-    background: #293241;
-    border: 1px solid #98c1d9;
-    margin-top: 20px;
-    position: relative;
-    overflow: hidden;
-    transition: all 500ms ease;
-    cursor: pointer;
-    z-index: 1;
-  }
   .imgLogin{
       width: 64px;
       height: 64px;
@@ -64,3 +31,16 @@
       margin: auto;
       text-align: center;
   }
+  .buttonLogin{
+    width: 40%;
+  }
+  .buttonLogin:hover{
+    background: #98c1d9;
+    color: #293241;
+    border: none;
+  }
+    @media screen and (max-width:1000px){
+    .loginDiv{
+        width: 70%;
+    }
+}
