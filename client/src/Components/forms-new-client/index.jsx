@@ -35,9 +35,6 @@ export const formsNewClient = ()=>{
                 <br></br>
                 <input name="name" className="inputLogin" type="text"></input>
                 <br></br>
-                if () {
-                    
-                }
                 <label htmlFor="lastName">Razão social / Sobrenome</label>
                 <br></br>
                 <input name="lastName" className="inputLogin" type="text"></input>
