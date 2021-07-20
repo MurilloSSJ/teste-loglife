@@ -17,9 +17,11 @@ class Login extends Component{
   render(){
     const divLogin = React.createElement(formsLogin)
     return(
+      <>
       <div className="principalDiv">
         {divLogin}
       </div>
+      </>
     )
   }
 }

@@ -1,0 +1,29 @@
+.navMenu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: #0159a1;
+}
+.logoIMG{
+    width: 10%;
+    margin: 10px;
+}
+.principalMenu{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #e0fbfc;
+}
+.linkMenu{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
+}
+.linkMenu:hover{
+    color: #ee6c4d;
+    cursor: pointer;
+    border-bottom: 1px solid #ee6c4d;
+}
