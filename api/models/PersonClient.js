@@ -46,7 +46,7 @@ const PersonClient = new Schema({
         required:true
     },
     openingHours:{
-        type: Date,
+        type: String,
         required:true
     },
     attendanceDay:{
@@ -58,3 +58,4 @@ const PersonClient = new Schema({
         required:true
     }]
 })
+personsClients = mongoose.model('Cliente',PersonClient);
