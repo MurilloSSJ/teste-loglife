@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const EnterpriseClient = new Schema({
     situation:{
-        type:Boolean,
+        type:String,
         required:true
     },
     name:{
@@ -46,7 +46,7 @@ const EnterpriseClient = new Schema({
         required:true
     },
     openingHours:{
-        type: Date,
+        type: String,
         required:true
     },
     attendanceDay:{

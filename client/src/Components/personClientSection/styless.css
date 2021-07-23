@@ -1,0 +1,61 @@
+.clientSection{
+    width: 80%;
+    margin:0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+    min-height: 100vh;
+}
+.titleClient{
+    font-size: 32px;
+    font-weight: 400;
+}
+.clientCard{
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.171);
+    text-align: center;
+    margin-top: 50px;
+    height: 400px;
+    transition: transform 100ms ease-in-out;
+    margin:20px;
+    background-color: #212529;
+    color: white;
+    border-radius: 0.25rem;
+}
+.clientCard:hover{
+    transform: scale(1.05);
+}
+.sectionButtonManager{
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+.alert{
+    background-color: #ffc107;
+    border-radius: 0.25rem;
+    color: #000;
+    font-family: inherit;
+}
+.alert:hover{
+    background-color: #ffc107;
+    border-radius: 0.25rem;
+    color: #000;
+    font-family: inherit;
+}
+.danger{
+    font-family: inherit;
+    background-color: #b02a37;
+    border-radius: 0.25rem;
+}
+.danger:hover{
+    font-family: inherit;
+    background-color: #b02a37;
+    border-radius: 0.25rem;
+    color: white;
+}
+.successButton{
+    background-color: green;
+    border-radius: 0.25rem;
+    font-family: inherit;
+}

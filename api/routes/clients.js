@@ -64,7 +64,7 @@ router.post('/add',(req,res)=>{
             vehicles:req.body.vehicles
         }
         new personClient(newClient).save().then(()=>{
-            res.redirect('http://localhost:5000/clients/search')
+            res.redirect('http://localhost:3000/')
         })
     }else if(req.body.typeClient=='clientEnterprise'){
         const newClient = {
@@ -84,7 +84,7 @@ router.post('/add',(req,res)=>{
             vehicles:req.body.vehicles
         }
         new enterpriseClient(newClient).save().then(()=>{
-            console.log('salvo com sucesso')
+            res.redirect('http://localhost:3000/')
         })
     }
 })

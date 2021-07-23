@@ -8,7 +8,7 @@ export const formsNewClient = ()=>{
             </div>
             <h3 className="smallTitle">Novo cliente</h3>
             <div className="Transition"></div>
-            <form method="POST">
+            <form method="POST" action="http://localhost:5000/clients/add">
 
                 <label htmlFor="typeClient">Tipo de cliente</label>
                 <br></br>
@@ -23,11 +23,11 @@ export const formsNewClient = ()=>{
                 <div className="flexCheckbox">
                     <div>
                         <label>Ativo</label>
-                        <input type="radio" value={1} name="situation"></input>
+                        <input type="radio" value='Ativo' name="situation"></input>
                     </div>
                     <div>
                         <label>Não Ativo</label>
-                        <input type="radio" value={0} name="situation"></input>
+                        <input type="radio" value="Não ativo" name="situation"></input>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@ export const formsNewClient = ()=>{
 
                 <label htmlFor="attendance">Dia de atendimento</label>
                 <br></br>
-                <input name="attendance" className="inputLogin"></input>
+                <input name="attendance" className="inputLogin" type="Date"></input>
                 <br></br>
 
                 <label htmlFor="vehicles">Veículos Utilizados</label>
