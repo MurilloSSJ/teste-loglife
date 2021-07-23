@@ -6,6 +6,7 @@ import { navMenu } from './Components/nav-menu'
 import login from './pages/Login/index'
 import clients from './pages/Lista-clientes/index'
 import newClient from './pages/new-client/index'
+import personClients from './pages/personClients/index'
 
 export default function App(){
     const menu = React.createElement(navMenu)
@@ -14,6 +15,7 @@ export default function App(){
         {menu}
         <main>
             <Switch>
+                <Route path='/clients/clientPerson' component={personClients}></Route>
                 <Route path='/clients' component = {clients}></Route>
                 <Route path='/newclient' component ={newClient}></Route>
                 <Route path='/' component = {login}></Route>
