@@ -8,7 +8,7 @@ export const formsLogin = ()=>{
         </div>
         <h3>Login</h3>
         <div className="Transition"></div>
-        <form method="POST">
+        <form method="POST" action="http://localhost:5000/user/auth">
             <label htmlFor="inputLogin">Seu email</label>
             <br></br>
             <input type="mail" className="inputLogin" name="email"></input>
