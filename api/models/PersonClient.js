@@ -58,4 +58,4 @@ const PersonClient = new Schema({
         required:true
     }]
 })
-personsClients = mongoose.model('Cliente',PersonClient);
+mongoose.model('Cliente',PersonClient);
