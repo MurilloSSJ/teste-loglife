@@ -1,7 +1,7 @@
 import './styless.css';
 import { Component } from 'react';
 import { ClientSection } from '../../Components/personClientSection';
-export class personClients extends Component{
+export class enterpriseClients extends Component{
     state = {
         clients:[],
         allClients:[],
@@ -10,7 +10,7 @@ export class personClients extends Component{
     }
     async componentDidMount(){
         //const {page,clientsPerPage} = this.state
-        const clientsResponse = fetch('http://localhost:5000/clients/search/clientPerson')
+        const clientsResponse = fetch('http://localhost:5000/clients/search/clientEnterprise')
         const [clients] = await Promise.all([clientsResponse])
         const clientsJSON = await clients.json()
         this.setState({
@@ -26,15 +26,15 @@ export class personClients extends Component{
     }
 
     render(){
-        const clients = this.state.clients.personClients
+        const clients = this.state.clients.enterpriseClients
         return(
             <>
             <ClientSection
             clients={clients}
-            typeClient="clientPerson"
+            typeClient="clientEnterprise"
             ></ClientSection>
             </>
         )
     }
 }
-export default personClients
+export default enterpriseClients

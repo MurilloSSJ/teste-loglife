@@ -88,25 +88,26 @@ router.post('/add',(req,res)=>{
         })
     }
 })
-router.delete('/delete/:typeClient/:id',(req,res)=>{
+
+router.post('/delete/:typeClient/:id',(req,res)=>{
     const typeClient = req.params.typeClient
     const id = req.params.id
     if(typeClient == 'clientEnterprise'){
         enterpriseClient.remove({_id:id}).then(()=>{
-            console.log('Removido com sucesso')
+            res.redirect('http://localhost:3000/clients/enterpriseClient')
         })
         
     }else if(typeClient == 'clientPerson'){
         personClient.remove({_id:id}).then(()=>{
             console.log('success')
-            res.redirect('http://localhost:5000/clients/search')
+            res.redirect('http://localhost:3000/clients/clientPerson')
         }).catch((err)=>{
             console.log(err)
         })
     }
 })
 
-router.put('/alter/:typeClient/:id',(req,res)=>{
+router.post('/alter/:typeClient/:id',(req,res)=>{
     const typeClient = req.params.typeClient
     const id = req.params.id
     if(typeClient == 'clientEnterprise'){
@@ -127,7 +128,7 @@ router.put('/alter/:typeClient/:id',(req,res)=>{
             editClient.vehicles=req.body.vehicles
             editClient.save().then(()=>{
                 console.log('success')
-                res.redirect('http://localhost:5000/clients/search')
+                res.redirect('http://localhost:3000/clients/enterpriseClient')
             })
         })
         
@@ -148,8 +149,7 @@ router.put('/alter/:typeClient/:id',(req,res)=>{
             editClient.attendanceDay=req.body.attendance,
             editClient.vehicles=req.body.vehicles
             editClient.save().then(()=>{
-                console.log('success')
-                res.redirect('http://localhost:5000/clients/search')
+                res.redirect('http://localhost:3000/clients/clientPerson/')
             })
         })
     }

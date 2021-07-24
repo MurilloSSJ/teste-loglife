@@ -1,0 +1,26 @@
+.sectionOnlyClient{
+    width: 50%;
+    margin: auto;
+    margin-top: 60px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-box-shadow: -15px 18px 11px -4px rgba(0,0,0,0.66);
+    -moz-box-shadow: -15px 18px 11px -4px rgba(0,0,0,0.66);
+    box-shadow: -15px 18px 11px -4px rgba(0,0,0,0.66);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+    padding: 30px;
+    background-color: white;
+}
+.nameClient{
+    text-align: center;
+}
+.textClient{
+    font-size: 20px;
+}
+.alignCenterOnlyClient{
+    width: 100%;
+    text-align: center;
+}
