@@ -1,29 +1,41 @@
 import './styless.css';
 import { Component } from 'react'
 import React from 'react'
-import { formsLogin } from '../../Components/login/index';
-import axios from 'axios'
+import { FormsLogin } from '../../Components/login/index';
 class Login extends Component{
   constructor(props){
     super(props)
-    this.state = {apiResponse:''}
+    this.state={
+      email:'',
+      password:'',
+      login:{
+        email:'admin@admin.com',
+        password:'admin1234'
+      }
+    }
   }
-  callAPI(){
-    fetch('http://localhost:9000/test').then(res => res.text())
-    .then(res=>this.setState({apiResponse:res}))
+  clickLogin = ()=>{
+      if(this.state.email===this.state.login.email && this.state.password===this.state.login.password){
+        console.log('entrou')
+        sessionStorage.token = true
+      }
+    
   }
-  login = ()=>{
-    axios.post('http://localhost:3000/auth')
-  }
-  componentDidMount(){
-    //this.callAPI()
+  changeInput = (event)=>{
+    if(event.target.name==='email'){
+      this.setState({email:event.target.value})
+    }else if(event.target.name==='password'){
+      this.setState({password:event.target.value})
+    }
   }
   render(){
-    const divLogin = React.createElement(formsLogin)
     return(
       <>
       <div className="principalDiv">
-        {divLogin}
+        <FormsLogin 
+        onClick={this.clickLogin}
+        onChange = {this.changeInput}
+        ></FormsLogin>
       </div>
       </>
     )

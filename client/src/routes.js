@@ -1,5 +1,4 @@
 import { Switch, Route, BrowserRouter,Redirect } from "react-router-dom"
-import { isAuthenticated } from "./auth"
 //Pages
 import  UpdatePersonClient from "./pages/updatePerson"
 import login from'./pages/Login/index'
@@ -14,20 +13,18 @@ import  notFound  from "./Components/notFound/notFound"
 
 
 const PrivateRoute = ({component:Component,...rest}) =>{
+    console.log(sessionStorage)
     return(
     <Route 
     {...rest} 
-    render = {props =>{
-        var promise = isAuthenticated()
-        promise.then((resposta)=>{
-            if(resposta===true){
-                <Component {...props}></Component>
-            }else{
-                <Redirect to={{pathname:'/'}}/>
-            }
-        })
+    render = {props =>
+        (sessionStorage.token)?(
+        <Component {...props}></Component>
+        ):(
+            <Redirect to={{pathname:'/'}}/>
+        )
 
-    }}>
+    }>
     </Route>
     )
 }
@@ -35,20 +32,20 @@ const Routes = () =>{
     return(
         <BrowserRouter>
             <Switch>
-                <Route component={UpdatePersonClient} exact path="/clients/clientPerson/update/:id"></Route>
-                <Route component={OnlyPersonClient} exact path='/clients/clientPerson/:id'></Route>
-                <Route component={personClients} exact path='/clients/clientPerson'></Route>
+                <PrivateRoute component={UpdatePersonClient} exact path="/clients/clientPerson/update/:id"></PrivateRoute>
+                <PrivateRoute component={OnlyPersonClient} exact path='/clients/clientPerson/:id'></PrivateRoute>
+                <PrivateRoute component={personClients} exact path='/clients/clientPerson'></PrivateRoute>
 
-                <Route component={UpdateEnterpriseClient} exact path= '/clients/enterpriseClient/update/:id'></Route>
-                <Route component={OnlyEnterpriseClient} exact path="/clients/enterpriseClient/:id"></Route>
-                <Route component={enterpriseClients} exact path ='/clients/enterpriseClient'></Route>
+                <PrivateRoute component={UpdateEnterpriseClient} exact path= '/clients/enterpriseClient/update/:id'></PrivateRoute>
+                <PrivateRoute component={OnlyEnterpriseClient} exact path="/clients/enterpriseClient/:id"></PrivateRoute>
+                <PrivateRoute component={enterpriseClients} exact path ='/clients/enterpriseClient'></PrivateRoute>
 
                 <PrivateRoute exact path="/clients" component={clients}></PrivateRoute>
-                <Route component ={newClient} exact path='/newclient'></Route>
+                <PrivateRoute component ={newClient} exact path='/newclient'></PrivateRoute>
 
                 <Route component = {login} exact path='/' ></Route>
 
-                <Route component={notFound}></Route>
+                <PrivateRoute component={notFound}></PrivateRoute>
             </Switch>
         </BrowserRouter>
     )
