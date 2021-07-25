@@ -11,7 +11,6 @@ export class FormsLogin extends Component{
         </div>
         <h3>Login</h3>
         <div className="Transition"></div>
-        <form>
             <label htmlFor="inputLogin">Seu email</label>
             <br></br>
             <input type="mail" className="inputLogin" name="email" onChange={onChange}></input>
@@ -23,7 +22,6 @@ export class FormsLogin extends Component{
             <div className="alignCenterLogin">
             <button className="buttonLogin" onClick={onClick}>Fazer Login</button>
             </div>
-        </form>
     </div>
     )
     }

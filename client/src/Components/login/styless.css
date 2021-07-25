@@ -36,9 +36,13 @@
   .alignCenterLogin{
       margin: auto;
       text-align: center;
+      width: 100%;
   }
   .buttonLogin{
-    width: 40%;
+    width: 50%;
+  }
+  .linkLogin{
+    width: 100%;
   }
   .buttonLogin:hover{
     background: #98c1d9;

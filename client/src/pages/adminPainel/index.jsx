@@ -6,11 +6,16 @@ export class painelAdmin extends Component{
         super(props)
         this.state = {}
     }
-
+    logOut(){
+        window.sessionStorage.clear()
+        window.location.href='/'
+    }
     render(){
         return(
             <>
-            <Paineladm></Paineladm>
+            <Paineladm
+            onClick={this.logOut}
+            ></Paineladm>
             </>
         )
     }

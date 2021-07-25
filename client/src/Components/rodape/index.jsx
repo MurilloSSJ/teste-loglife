@@ -6,7 +6,7 @@ import logo from '../../img/enterprise.png'
 export const rodape = ()=>{
     return(
         <div className="rodapeFlex">
-            <img src={logo} width="64px" height="64px"></img>
+            <img src={logo} width="64px" height="64px" alt="Logo Empresa"></img>
             <br></br>
             <div className="rodapeSection">
                 <h3 className="rodapeTitle">Redes sociais</h3>

@@ -6,16 +6,20 @@ export class enterpriseClients extends Component{
         clients:[],
         allClients:[],
         page:0,
-        clientsPerPage:4
+        clientsPerPage:10
     }
     async componentDidMount(){
+        const {page,clientsPerPage} = this.state
         //const {page,clientsPerPage} = this.state
         const clientsResponse = fetch('http://localhost:5000/clients/search/clientEnterprise')
         const [clients] = await Promise.all([clientsResponse])
         const clientsJSON = await clients.json()
+        const clientsReal = clientsJSON.enterpriseClients
         this.setState({
-            clients:clientsJSON
+            clients:clientsReal.slice(page,clientsPerPage),
+            allClients:clientsReal
         })
+
     }
     moreClients = ()=>{
         const {page,clientsPerPage,allClients,clients} = this.state
@@ -26,14 +30,19 @@ export class enterpriseClients extends Component{
     }
 
     render(){
-        const clients = this.state.clients.enterpriseClients
+        const {clients,page,clientsPerPage,allClients} = this.state
+        const noMoreClients = page + clientsPerPage >=allClients.length
         return(
-            <>
+            <div className="paginationDiv">
             <ClientSection
             clients={clients}
             typeClient="clientEnterprise"
             ></ClientSection>
-            </>
+            <button className="buttonIcons successButton disable"
+            onClick={this.moreClients}
+            disabled = {noMoreClients}
+            >Ver mais clientes</button>
+            </div>
         )
     }
 }

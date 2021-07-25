@@ -14,7 +14,6 @@ import AdmPainel from './pages/adminPainel/index'
 
 
 const PrivateRoute = ({component:Component,...rest}) =>{
-    console.log(sessionStorage)
     return(
     <Route 
     {...rest} 
@@ -27,6 +26,20 @@ const PrivateRoute = ({component:Component,...rest}) =>{
 
     }>
     </Route>
+    )
+}
+const NotPrivateRoute = ({component:Component,...rest})=>{
+    return(
+        <Route
+        {...rest}
+        render = {props =>
+        (sessionStorage.token)?(
+            <Redirect to={{pathname:'/admin'}}/>
+        ):(
+            <Component {...props}></Component>
+        )
+        }>
+        </Route>
     )
 }
 const Routes = () =>{
@@ -44,7 +57,7 @@ const Routes = () =>{
                 <PrivateRoute exact path="/clients" component={clients}></PrivateRoute>
                 <PrivateRoute component ={newClient} exact path='/newclient'></PrivateRoute>
 
-                <Route component = {login} exact path='/' ></Route>
+                <NotPrivateRoute component = {login} exact path='/' ></NotPrivateRoute>
                 <PrivateRoute component={AdmPainel} exact path ='/admin'></PrivateRoute>
 
                 <PrivateRoute component={notFound}></PrivateRoute>

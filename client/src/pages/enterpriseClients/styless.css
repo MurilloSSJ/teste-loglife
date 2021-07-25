@@ -1,0 +1,10 @@
+.paginationDiv{
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+    min-height: 100vh;
+}
+.disable:disabled{
+    background-color: #777;
+    cursor: not-allowed;
+}
