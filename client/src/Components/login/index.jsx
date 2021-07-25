@@ -11,7 +11,7 @@ export class FormsLogin extends Component{
         </div>
         <h3>Login</h3>
         <div className="Transition"></div>
-        <form method="POST" action="http://localhost:5000/user/auth">
+        <form>
             <label htmlFor="inputLogin">Seu email</label>
             <br></br>
             <input type="mail" className="inputLogin" name="email" onChange={onChange}></input>
@@ -21,7 +21,7 @@ export class FormsLogin extends Component{
             <input type="password" className="inputLogin" name="password" onChange={onChange}></input>
             <br></br>
             <div className="alignCenterLogin">
-            <button type='submit' className="buttonLogin" onClick={onClick}>Fazer Login</button>
+            <button className="buttonLogin" onClick={onClick}>Fazer Login</button>
             </div>
         </form>
     </div>

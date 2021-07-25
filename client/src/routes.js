@@ -10,6 +10,7 @@ import enterpriseClients from'./pages/enterpriseClients'
 import OnlyEnterpriseClient from'./pages/onlyEnterprise'
 import UpdateEnterpriseClient from'./pages/updateEnterprise'
 import  notFound  from "./Components/notFound/notFound"
+import AdmPainel from './pages/adminPainel/index'
 
 
 const PrivateRoute = ({component:Component,...rest}) =>{
@@ -44,6 +45,7 @@ const Routes = () =>{
                 <PrivateRoute component ={newClient} exact path='/newclient'></PrivateRoute>
 
                 <Route component = {login} exact path='/' ></Route>
+                <PrivateRoute component={AdmPainel} exact path ='/admin'></PrivateRoute>
 
                 <PrivateRoute component={notFound}></PrivateRoute>
             </Switch>

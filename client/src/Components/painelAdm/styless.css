@@ -1,0 +1,40 @@
+.flexRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 80%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(0, 0, 0, 0.363);
+    min-height: 80vh;
+    border-radius: 10px;
+}
+.flexRowChilds{
+    -webkit-box-shadow: -2px 14px 17px -1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -2px 14px 17px -1px rgba(0,0,0,0.35);
+    box-shadow: -2px 14px 17px -1px rgba(0,0,0,0.35);
+    width: 400px;
+    border:1px solid rgba(0, 0, 0, 0.596);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px 30px;
+}
+.flexColumn{
+    flex-direction: column;
+    padding-top: 50px;
+}
+.fullWidht{
+    width: 100%;
+}
+.linkPainel{
+    width: 100%;
+    text-align: center;
+}
+.buttonPainel{
+    margin-top: 30px;
+    width: 70%;
+}

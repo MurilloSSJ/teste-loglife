@@ -35,3 +35,9 @@
 .linkButton{
     width: 100%;
 }
+@media screen and (max-width:1000px) {
+    .flexItem{
+        width:100%;
+        margin-bottom:70px;
+    }
+}

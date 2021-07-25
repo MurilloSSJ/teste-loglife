@@ -16,8 +16,8 @@ class Login extends Component{
   }
   clickLogin = ()=>{
       if(this.state.email===this.state.login.email && this.state.password===this.state.login.password){
-        console.log('entrou')
         sessionStorage.token = true
+        window.location.href('/admin')
       }
     
   }

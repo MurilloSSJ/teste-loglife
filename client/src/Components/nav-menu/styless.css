@@ -24,31 +24,16 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     letter-spacing: 2px;
 }
-.menuView{
-    display: block;
-}
 .linkMenu:hover{
     color: #ee6c4d;
     cursor: pointer;
     border-bottom: 1px solid #ee6c4d;
 }
-.menuMobile{
-    display: none;
-}
-#linkMenuMobile{
-    display: none;
-}
-#toggleButton{
-    cursor: pointer;
-}
 @media screen and (max-width:800px) {
-    .menuMobile{
-        display:flex;
+    .principalMenu{
+        flex-direction: column;
     }
-    #linkMenuMobile{
-        display: none;
-    }
-    .menuDesktop{
-        display: none;
+    .linkMenu{
+        margin: 15px 0;
     }
 }
